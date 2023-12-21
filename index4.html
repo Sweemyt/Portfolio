@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+    
+    <head>
+        <title>Contact Timothée</title>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--<meta http-equiv="refresh" content="30">-->
+
+        <link href="index.css" rel="stylesheet">
+
+        <script src="portfolio.js"></script>
+    </head>
+
+
+
+    <body>
+        <div class="top"></div>
+
+        <header>
+            <!-- ===bar de navigation=== -->
+            <nav class="nav-bar">
+                <a class="name" href="index1.html"><img src="./images/TI.png" alt="logo_ini"><span>Timothée Imaho</span></a>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="index2.html">Profil</a></li>
+                    <li><a href="index3.html">Parcours</a></li>
+                    <li><a href="index5.html">Veille Technologique</a></li>
+                    <li><a id="selec" href="index4.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+
+        <main>
+            <!-- =====CONTACT=====-->
+            <h1 class="headp">Contact</h1>
+            <br><br>
+            <div class="contact">    
+
+                <!-- ======MES CONTACTS====== -->
+                <div class="mes-contacts">
+                    <h2>Mes contacts</h2>
+                    <p>Mon numéros : 07 67 73 37 00 </p>
+                    <p>adresse : 30 route d'Estrée, 77126 Égligny</p>
+                    <iframe src="https://www.google.com/maps/place/30+Rte+d'Estr%C3%A9es,+77126+%C3%89gligny/@48.4313475,3.1279561,17z/data=!3m1!4b1!4m6!3m5!1s0x47ef40ac01ae7933:0xd4fac75c189847e8!8m2!3d48.431344!4d3.130531!16s%2Fg%2F11c1_bcxx0?entry=ttu" frameborder="0"></iframe>
+                </div>
+
+                <!-- ======FROMULAIRE CONTACT======-->
+                <div class="formulaire">
+                    <h2>Contactez-moi</h2>
+                    <br>
+
+                    <form action="/ma-page-de-traitement" method="post">
+                        <ul>
+
+                          <li>
+                            <label for="name">Nom&nbsp;:</label>
+                            <input type="text" id="name" name="nom" />
+                          </li>
+
+                          <li>
+                            <label for="prenom">Prenom&nbsp;:</label>
+                            <input type="text" id="prenom" name="prenom" />
+                          </li>
+
+                          <li>
+                            <label for="mail">E-mail&nbsp;:</label>
+                            <input type="email" id="mail" name="email" />
+                          </li>
+
+                          <li>
+                            <label for="tel">Téléphone&nbsp;:</label>
+                            <input type="tel" name="tel" id="tel" maxlength="10" placeholder="facultatif" notrequired>
+                          </li>
+
+                          <li>
+                            <label for="msg">Message&nbsp;:</label>
+                            <textarea id="msg" name="message"></textarea>
+                          </li>
+
+                          <br>
+
+                            <div class="button">
+                                <button type="submit">Envoyer le message</button>
+                            </div>   
+
+                        </ul>
+                    </form>
+                </div>
+            </div>
+        </main>
+
+        <a id="button-top" href="#top">^</a>
+    </body>
+
+    <br><br>
+    <footer>
+        <br>
+        <div class="reseaux">
+            <a href="https://www.github.com/Sweemyt" target="_blank">
+                <img src="./images/icon_github.png" alt="github">
+            </a>
+            <a href="https://www.linkedin.com/in/timoth%C3%A9e-imaho-6724732a5" target="_blank">
+                <img src="./images/icon_linkedin.jpg" alt="linkedin">
+            </a>
+        </div>
+        <br>
+    </footer>
+</html>
