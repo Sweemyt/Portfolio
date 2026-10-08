@@ -1,0 +1,134 @@
+::-webkit-scrollbar {
+  width: 10px;
+}  
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgb(70, 70, 70); 
+  border-radius: 10px;
+}  
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(64, 64, 64); 
+  border-radius: 10px;
+} 
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #595353; 
+}
+.custom-btn {
+  padding: 10px 25px;
+  font-weight: 500;
+  background: transparent;
+  outline: none !important;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: center;
+  display: inline-block;
+  position: relative;
+}
+/****  BTN No°1  *****/
+.btn-1 {
+    width: 11rem;
+    height: 3.5rem;
+    border: 2px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn-1:hover {
+    background: #000;
+    color: #fff;
+}
+.btn-1:active {
+    top: 2px;
+} 
+/**** BTN No. 6 ****/
+.btn-6 {
+  width: 130px;
+  height: 40px;
+  line-height: 42px;
+  padding: 0;
+  border: none;
+}
+.btn-6 span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.btn-6:before,
+.btn-6:after {
+  position: absolute;
+  content: "";
+  height: 0%;
+  width: 2px;
+  background: #000;
+}
+.btn-6:before {
+  right: 0;
+  top: 0;
+  transition: all 0.1s ease;
+}
+.btn-6:after {
+  left: 0;
+  bottom: 0;
+  transition: all 0.1s 0.2s ease;
+}
+.btn-6:hover:before {
+  transition: all 0.1s 0.2s ease;
+  height: 100%;
+}
+.btn-6:hover:after {
+  transition: all 0.1s ease;
+  height: 100%;
+}
+.btn-6 span:before,
+.btn-6 span:after {
+  position: absolute;
+  content: "";
+  background: #000;
+}
+.btn-6 span:before {
+  left: 0;
+  top: 0;
+  width: 0%;
+  height: 2px;
+  transition: all 0.1s 0.1s ease;
+}
+.btn-6 span:after {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+}
+.btn-6 span:hover:before {
+  width: 100%;
+}
+
+/**** BTN No. 7 ****/
+.btn-7 {
+  border: 2px solid #000;
+  transition: all 0.3s ease;
+  background: #f2f2f2;
+}
+.btn-7:before {
+  position: absolute;
+  content: " ";
+  z-index: -1;
+  width: 25%;
+  top: 50%;
+  left: -15%;
+  height: 2px;
+  background: #000;
+  transition: all 0.3s ease;
+}
+.btn-7:hover {
+  background: #000;
+  color: #fff;
+  border-color: #000;
+  padding-left: 30px;
+  padding-right: 20px;
+}
+.btn-7:hover:before {
+  left: -10%;
+}

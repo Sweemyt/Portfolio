@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css?family=MuseoModerno");
+@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css");
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'MuseoModerno';
+}
+::selection {
+    color:#fff;
+    background-color: #000; 
+}
+body { background-color: #eee; }
+
+/* NAV BAR */
+#ct-na{
+    width:100%;
+    height: 4.8em;
+    background-color: #dee2e6;
+}
+#nav {
+    position: fixed;
+    width: 100%;
+    padding-top: 20px;
+    background: transparent;
+    backdrop-filter: blur(3px);
+    z-index: 100;
+}
+.navbar a {
+    position: relative;
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 40px;
+}
+.navbar a::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background: #000;
+    transition: .3s;
+}
+.navbar a:hover::before {
+    width: 100%;
+}
+
+/* Liens réseaux */
+.footer-social-links{
+    top: 0;
+    right: 0;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2rem;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 20%;
+    z-index: 200;
+}
+.footer-social-links a{
+    width: 25px;
+    height: 25px;
+    line-height: 25px !important;
+    position: relative;
+    margin: 0 15px;
+    text-align: center;
+    display: inline-block;
+    color: #111;
+}
+.footer-social-links a i,
+.footer-social-links a span{
+    position: relative;
+    top: 2px;
+    left: 1px; 
+}
+.footer-social-links a:before{
+    content: "";
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid #111;
+    transform: rotate(45deg);
+}
+.footer-social-links a:hover{
+    color: #fff;
+}
+.footer-social-links a:hover:before{
+    background: #111;
+    transition: .8s;
+}
+
+/* img parallax */
+.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/**/
+#prez {
+    padding: 0 3rem 0 3rem;
+    height: 35vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

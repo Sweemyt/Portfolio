@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!--<meta http-equiv="refresh" content="100">-->
+        
+        <title>Portfolio Timothée</title>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="stylesheet.css">
+        <link rel="stylesheet" href="stylesheet2.css">
+
+        <script src="script.js"></script>
+    </head>
+
+    <body>
+        <div class="container-fluid">
+            <div id="top"></div>
+
+            <!----- NAVBAR ----->   
+            <div class="row">
+                <div class="col-12" id="ct-na">
+                    <nav class="navbar navbar-expand-lg navbar-light" id="nav">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" onclick="scrollToSection('top')">Accueil</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="btn dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:#707070;">
+                                        Profil
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="m-0 dropdown-item" onclick="scrollToSection('propos')">Présentation</a>
+                                        <a class="m-0 dropdown-item" onclick="scrollToSection('parcours')">Parcours</a>
+                                        <a class="m-0 dropdown-item" onclick="scrollToSection('compétences')">Mes Compétences   </a>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" onclick="scrollToSection('veille')">Veille Technologique</a> 
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" onclick="scrollToSection('contact')">Contact</a> 
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+
+            <!----- LIENS RESEAUX ----->
+            <div class="footer-social-links">
+                <a href="https://www.linkedin.com/in/timoth%C3%A9e-imaho-6724732a5" title="LinkedIn+" target="_blank"><i class="fa fa-linkedin"></i></a> <!--lien profil linkedin-->
+                <a href="https://www.github.com/Sweemyt" title="Github" target="_blank"><i class="fa fa-github"></i></a> <!--lien profil github-->
+            </div>
+            
+            <!----- ACCUEIL ----->
+            <div class="row mb-3 parallax" style="height:95vh; background-image:url('images/back.jpg');">
+                <div class="col-sm-12 align-self-center" id="prez" style="color: #fff;text-shadow: 5px 5px 5px #000;">
+                    <h1 class="display-2 text-center"><i>Imaho Timothée</i></h1>
+                    <h2 class="display-6 text-center">Étudiant en informatique</h2>
+                </div>
+            </div>
+
+            <!----- ABOUT ME ------>    
+            <div class="row p-4" id="propos">
+                <h1 class="col-12 ml-3 display-5 d-flex align-self-center">Présentation</h1>    
+                <div class="col-4 p-4">
+                    <img class="img-fluid" src="images/profil.png" alt="photo"> <!--image profil-->
+                </div>
+                
+                <!--- à propos--->
+                <div class="col-8 p-4">
+                    <div class="propos" style="font-size:larger;">
+                        <p>Je m'appelle Timothée Imaho, actuellement agé de 18 ans.</p>
+                        <p>Je suis actuellement <strong>étudiant</strong> en première année de BTS SIO (Services informatiques aux organisations) au campus de l'Institution <a href="https://institutionsaintaspais.fr/" target="_blank" style="color:black;">Saint Aspais</a> à Melun.</p>
+                        <p>À la recherche d'un stage de 6 semaines du 21 Mai au 28 Juin 2024.</p>
+                        <a href="https://pedagogie.ac-reunion.fr/fileadmin/ANNEXES-ACADEMIQUES/03-PEDAGOGIE/02-COLLEGE/langues-vivantes/anglais/images_Nawaz/BTS_SIO/REFERENTIEL_BTS_SIO-_RENOVATION_SESSION_2022-SIGNETS.pdf" target="_blank" style="color:black; font-size:smaller;">> référentiel bts sio</a>
+                    </div>
+                    
+                    <!--- cv --->
+                    <h2 class="col-12 pt-5 pr-5 d-flex justify-content-end">- Curriculum Vitae</h2>
+                    <div class="col-12 mt-5 pr-3 d-flex justify-content-end align-items-center" style="gap:3rem;">
+                        <button class="custom-btn btn-6" onclick="ouvrirCV()"><span>Afficher le CV</span></button> <!--button consulter CV-->
+                        <button class="custom-btn btn-7" href="_blank" download="Timothee_cv.pdf">Télécharger le CV</button> <!--button téléchager CV-->
+                    </div>
+                </div>
+
+                <!-- Scroll button to top -->
+                <a class="btn btn-dark bg-dark" style="height:2.2rem; position:fixed; top:90%;" onclick="scrollToSection('top')">^</a>
+            </div>
+
+            <!----- PARCOURS ----->
+            <div class="row mb-4 p-4" id="parcours">
+                <div class="col-12 parallax" style="background-image:url('images/etudes.jpg');height:15rem;border-radius:80px;">
+                    <h1 class="col-10 ml-3 display-5 d-flex align-self-center text-white">Mon parcours</h1>
+                </div>
+                <!--- BAC STMG --->
+                <div class="row m-3 justify-content-center">
+                    <h2 class="col-12">BAC STMG</h2>
+                    <h3 class="col-12">- Qu'est-ce que le Bac STMG ?</h3>
+                    <pre class="mt-2">
+                    Le baccalauréat Sciences et Technologies du Management et de la Gestion (STMG) est une filière orientée vers les disciplines de gestion et de management. 
+                    Ce baccalauréat est idéal pour les élèves intéressés par les sciences économiques, le droit, le management des organisations, la gestion, 
+                    et la compréhension du fonctionnement des entreprises.
+                    À la fin de l'année de première, les élèves choisissent leur spécialisation parmi les options proposées, 
+                    telles que <strong>Gestion et Finance</strong>, <strong>Ressources Humaines</strong>, <strong>Mercatique</strong> (marketing), ou <strong>Systèmes d'Information de Gestion</strong>. 
+                        <!-- Option Marketing -->
+                    <li><u>L'option Mercatique</u> (celle que j'ai choisi) :</li>
+                    <pre>
+                    L'option Mercatique du baccalauréat STMG, souvent appelée marketing, est centrée sur l'étude des stratégies et des pratiques marketing essentielles au développement commercial des entreprises. 
+                    Cette spécialisation vise à doter les élèves de compétences pour analyser les marchés, élaborer des stratégies de produit, de prix, de distribution et de communication, 
+                    afin de répondre aux besoins des consommateurs tout en atteignant les objectifs commerciaux de l'entreprise. 
+                    Au cours de leur formation, les élèves apprennent à réaliser des études de marché, à comprendre le comportement des consommateurs, 
+                    et à utiliser divers outils numériques et traditionnels pour concevoir et mettre en œuvre des campagnes marketing efficaces. 
+                    L'accent est également mis sur la capacité à évaluer l'impact de ces campagnes pour en tirer des leçons et optimiser les stratégies futures. 
+                    </pre>
+                    </pre>
+                </div>
+                <!--- BTS SIO --->
+                <div class="row m-3 justify-content-center">    
+                    <h2 class="col-12">BTS SIO</h2>
+                    <h3 class="col-12">- Qu'est-ce que le BTS SIO ?</h3>
+                    <pre class="mt-2">
+                    Le BTS Services informatiques aux organisations est une formation de niveau <strong>Bac+2</strong>, est destiné à une intégration rapide sur le marché du travail. 
+                    Pour ceux qui le souhaitent, il est possible de continuer ses études un an ou plus.
+                    Cette apporte des compétences dans le support et la mise à disposition de services informatiques, ainsi qu'en cybersécurité.
+                    Et à la fin fin du premier semestre, il propose <strong>deux options :</strong>
+                    <!-- Option SISR -->
+                    <li><u>une option A</u> : Solution d'Infrastructure Système et Réseau (SISR)</li>
+                    <pre>
+                        Le BTS SIO option SLAM est conçu pour former des spécialistes du développement et de la maintenance de solutions logicielles.
+                        Cette option s'adresse à ceux qui sont intéressés par la programmation et la création d'applications informatiques.
+                        Les étudiants apprennent à analyser les besoins des utilisateurs, concevoir et développer des applications pour diverses plateformes.
+                        Ils sont également formés à la gestion de bases de données et à la mise en œuvre de systèmes d'information en accord avec les spécifications définies.
+                        Le cursus inclut des enseignements sur les langages de programmation les plus courants, les méthodes de gestion de projet informatique, 
+                        ainsi que les normes de sécurité et de qualité applicables au développement logiciel.
+                    </pre>
+                    <!-- Option SLAM -->
+                    <li><u>une option B</u> : Solutions Logicielles et Application Métiers (SLAM)<span> <--<u>mon option</u></span></li>
+                    <pre>
+                        Le BTS SIO option SISR est orienté vers la gestion et la configuration des infrastructures réseau et des systèmes informatiques dans une entreprise.
+                        Cette formation est idéale pour les étudiants qui s'intéressent à l'installation, la configuration et la maintenance de serveurs, de réseaux locaux et étendus, 
+                        ainsi que la sécurité des systèmes d'information. Les modules de formation couvrent les compétences techniques nécessaires pour administrer des réseaux, 
+                        gérer des systèmes d'exploitation (Windows, Linux), 
+                        mettre en œuvre des politiques de sécurité informatique, et assurer la continuité des services IT.
+                        L'option SISR prépare également les étudiants à gérer des projets d'infrastructure et à assurer le support technique nécessaire pour les utilisateurs.
+                    </pre>
+                    </pre>
+                </div>
+            </div>
+
+            <!----- COMPÉTENCES ----->
+            <div class="row mb-4 p-4" id="compétences">
+                <h1 class="col-10 ml-3 display-5 d-flex align-self-center">Mes Compétences</h1> 
+                <div class="col-11 mt-5 ml-5">
+                    <div class="row justify-content-between">
+                        <div class="card d-flex align-items-center" style="width: 12rem;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                            <img class="card-img-top" src="./images/logo/html.png" alt="Card image cap" style="width: 70%;height: 150px;">
+                            <div class="card-body">
+                                <hr>
+                                <h5 class="card-title">html</h5>
+                            </div>
+                        </div>
+                        <div class="card d-flex align-items-center" style="width: 12rem;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                            <img class="card-img-top" src="./images/logo/css.png" alt="Card image cap" style="width: 70%;height: 150px;">
+                            <div class="card-body">
+                                <hr>
+                                <h5 class="card-title">css</h5>
+                            </div>
+                        </div>
+                        <div class="card d-flex align-items-center" style="width: 12rem;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                            <img class="card-img-top" src="./images/logo/javascript.png" alt="Card image cap" style="width: 70%;height: 150px;">
+                            <div class="card-body">
+                                <hr>
+                                <h5 class="card-title">javascript</h5>
+                            </div>
+                        </div>
+                        <div class="card d-flex align-items-center" style="width: 12rem;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                            <img class="card-img-top" src="./images/logo/php.jpg" alt="Card image cap" style="width: 70%;height: 150px;">
+                            <div class="card-body">
+                                <hr>
+                                <h5 class="card-title">php</h5>
+                            </div>
+                        </div>
+                        <div class="card d-flex align-items-center" style="width: 12rem;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                            <img class="card-img-top" src="./images/logo/sql.jpg" alt="Card image cap" style="width: 70%;height: 150px;">
+                            <div class="card-body">
+                                <hr>
+                                <h5 class="card-title">sql</h5>
+                            </div>
+                        </div>
+                        <div class="card d-flex align-items-center" style="width: 12rem;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                            <img class="card-img-top" src="./images/logo/bootstrap.png" alt="Card image cap" style="width: 70%;height: 150px;">
+                            <div class="card-body">
+                                <hr>
+                                <h5 class="card-title">bootstrap</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-4 justify-content-between">
+                        <div class="card d-flex align-items-center" style="width: 12rem;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                            <img class="card-img-top" src="./images/logo/python.jpg" alt="Card image cap" style="width: 70%;height: 150px;">
+                            <div class="card-body">
+                                <hr>
+                                <h5 class="card-title">python</h5>
+                            </div>
+                        </div>
+                        <div class="card d-flex align-items-center" style="width: 12rem;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                            <img class="card-img-top" src="./images/logo/csharp.png" alt="Card image cap" style="width: 70%;height: 150px;">
+                            <div class="card-body">
+                                <hr>
+                                <h5 class="card-title">c#</h5>
+                            </div>
+                        </div>
+                        <div class="card d-flex align-items-center" style="width: 12rem;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);opacity: 0;">
+                            <img class="card-img-top" src="..." alt="Card image cap" style="width: 70%;height: 150px;">
+                            <div class="card-body">
+                                <hr>
+                                <h5 class="card-title">...</h5>
+                            </div>
+                        </div>
+                        <div class="card d-flex align-items-center" style="width: 12rem;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);opacity: 0;">
+                            <img class="card-img-top" src="..." alt="Card image cap" style="width: 70%;height: 150px;">
+                            <div class="card-body">
+                                <hr>
+                                <h5 class="card-title">...</h5>
+                            </div>
+                        </div>
+                        <div class="card d-flex align-items-center" style="width: 12rem;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);opacity: 0;">
+                            <img class="card-img-top" src="..." alt="Card image cap" style="width: 70%;height: 150px;">
+                            <div class="card-body">
+                                <hr>
+                                <h5 class="card-title">...</h5>
+                            </div>
+                        </div>
+                        <div class="card d-flex align-items-center" style="width: 12rem;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);opacity: 0;">
+                            <img class="card-img-top" src="..." alt="Card image cap" style="width: 70%;height: 150px;">
+                            <div class="card-body">
+                                <hr>
+                                <h5 class="card-title">...</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>   
+            </div>
+
+            <!----- VEILLE ----->
+            <div class="row mb-4 p-4" id="veille">
+                <h1 class="col-12 ml-3 display-5 d-flex align-self-center">Veille Technologique</h1>
+                <h4 class="col-2 ml-5 mt-5"><u>Définition :</u></h4>  
+                <p class="col-9 mt-5 pt-1">La veille technologique est le processus continu de collecte, d'analyse et de suivi des avancées technologiques pertinentes dans un domaine spécifique. Elle permet de rester informés des dernières innovations, tendances et développements, afin d'anticiper les changements, d'identifier de nouvelles opportunités et de prendre des décisions éclairées pour rester compétitifs sur le marché.</p>
+                <h3 class="col-12 mt-5 pt-3">Sujet : <u>Games Engines</u></h3>
+                <img class="col-12 px-5 img-fluid align-self-center" src="./images/game-engines.webp" alt="Game-engines.webp">
+                <h4 class="col-12 my-5 mt-3">Introduction</h4>
+                <p class="col-12 px-5">Un moteur de jeu, souvent appelé "game engine", est un logiciel conçu pour simplifier le processus de développement de jeux vidéo. Il offre une gamme d'outils et de fonctionnalités prêtes à l'emploi, permettant aux développeurs de se concentrer sur la création de contenu de jeu plutôt que sur des aspects techniques complexes. Ces moteurs fournissent des capacités pour gérer les graphismes, la physique, le son, l'intelligence artificielle et d'autres éléments nécessaires à la création de jeux interactifs. Des exemples populaires de moteurs de jeu incluent Unity, Unreal Engine, Lumberyard, Cryengine et Godot Engine, qui sont largement utilisés dans l'industrie du jeu pour développer une variété de jeux allant des petits projets indépendants aux grands titres de renom.</p>
+            </div>
+
+            <!----- CONTACT ----->
+            <div class="row mb-4 p-4 justify-content-center" id="contact" style="height:100vh">
+                <h1 class="col-10 ml-3 mb-4 display-5 d-flex align-self-end">Contact</h1>
+                <form class="col-8 mt-4" method="post" action="contactForm.php">
+                    <div class="form-group row">
+                        <input type="text" class="my-3 form-control form-control-lg" name="Nom" placeholder="Nom" required>
+                    </div>
+                    <div class="form-group row">
+                        <input type="text" class="my-3 form-control form-control-lg" name="Prenom" placeholder="Prenom" required>
+                    </div>
+                    <div class="form-group row">
+                       <input type="email" class="my-3 form-control form-control-lg" name="Email" placeholder="Adresse Email" required>
+                    </div>
+                    <div class="form-group row">
+                        <textarea class="my-3 form-control form-control-lg" name="Message" rows="3" required>Votre message</textarea>
+                    </div>
+                    <button class="custom-btn btn-7 mt-3">Envoyer</button>
+                </form>
+            </div>
+
+
+        </div>
+    </body>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</html>
