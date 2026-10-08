@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        <title>Portfolio</title>
+
+        <link rel="stylesheet" href="styles.css" />
+        <script src="script.js"></script>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    </head>
+
+    <body>
+        <div id="accueil"></div>
+        <header>
+            <nav>
+                <ul>
+                    <li><a onclick="scrollToSection('accueil')">Accueil</a></li>
+                    <li><a onclick="scrollToSection('profil')">Profil</a></li>
+                    <li><a onclick="scrollToSection('experiences')">Expériences</a></li>
+                    <li><a onclick="scrollToSection('projets')">Projets</a></li>
+                    <li><a onclick="scrollToSection('veille')">Veille technologique</a></li>
+                    <li><a onclick="scrollToSection('contact')">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Bienvenue dans mon univers de développement web</h1>
+                <p class="hero-subtitle">Je suis Timothée, étudiant en 2e année de BTS SIO.</p>
+                <div class="hero-buttons">
+                    <a onclick="scrollToSection('projets')" class="btn-primary">Voir mes projets</a>
+                    <a onclick="scrollToSection('profil')" class="btn-secondary">En savoir plus</a>
+                </div>
+            </div>
+        </section>
+          
+        <section id="profil">
+            <h2>Profil</h2>
+            
+            <!-- Présentation -->
+            <div class="presentation">
+                <div class="presentation-content">
+                    <!-- Image à gauche -->
+                    <div class="presentation-image">
+                        <img src="images/selfie1.JPEG" alt="selfie" />
+                    </div>
+                    
+                    <!-- Texte à droite -->
+                    <div class="presentation-text">
+                        <h2>Qui suis-je ?</h2>
+                        <p>Salut ! Je suis Timothée, un passionné de technologie et de développement app et web. J'adore apprendre de nouvelles choses et relever des défis techniques.</p>
+                        <p> Mon parcours m'a permis de développer des compétences en développement web et application, gestion de base de données, et bien plus encore.</p>
+                        <p>En dehors de l'informatique, je suis passionné principalement par la lecture et la musique.</p>
+                        <a class="btn" onclick="ouvrirCV()">Afficher le CV</a>
+                        <a href="fichiers/Timothée_Imaho_CV.pdf" download="Timothée_Imaho_CV.pdf" class="btn">
+                            Télécharger le CV
+                        </a> 
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certifications -->
+            <div class="certifications">
+                <h3>Certifications</h3>
+                <div class="certification-item" onclick="openModal('certif-mooc-anssi')">
+                  <p>Certification Mooc ANSI <span class="click-hint">(Voir)</span></p>
+                </div>
+                <div class="certification-item" onclick="openModal('certif-pix')">
+                  <p>Certification PIX <span class="click-hint">(Voir)</span></p>
+                </div>
+
+                <!-- Modal HTML (masqué par défaut) -->
+                <div id="certif-mooc-anssi" class="modal">
+                    <span class="close" onclick="closeModal('certif-mooc-anssi')">&times;</span>
+                    <iframe src="fichiers/certif/attestation-mooc-anssi.pdf" frameborder="0"></iframe>
+                </div>
+                
+                <div id="certif-pix" class="modal">
+                    <span class="close" onclick="closeModal('certif-pix')">&times;</span>
+                    <iframe src="fichiers/certif/attestation-pix-20250304.pdf" frameborder="0"></iframe>
+                </div>
+            </div>  
+        
+            <!-- Compétences -->
+            <div class="competences">
+                <h3>Compétences</h3>
+                <div class="competences-category">
+                    <h4>Langages de programmation</h4>
+                    <div class="competence-item">
+                        <img src="images/compétences/html-icon.png" alt="HTML">
+                        <p>HTML</p>
+                    </div>
+                    <div class="competence-item">
+                        <img src="images/compétences/css-icon.png" alt="CSS">
+                        <p>CSS</p>
+                    </div>
+                    <div class="competence-item">
+                        <img src="images/compétences/php-icon.jpg" alt="PHP">
+                        <p>PHP</p>
+                    </div>
+                    <div class="competence-item">
+                        <img src="images/compétences/javascript-icon.png" alt="JavaScript">
+                        <p>JavaScript</p>
+                    </div>
+                    <div class="competence-item">
+                        <img src="images/compétences/python-icon.png" alt="Python">
+                        <p>Python</p>
+                    </div>
+                    <div class="competence-item">
+                            <img src="images/compétences/csharp-icon.jpg" alt="C#">
+                        <p>C#</p>
+                    </div>
+                    <div class="competence-item">
+                        <img src="images/compétences/sql-icon.jpg" alt="SQL">
+                        <p>SQL</p>
+                    </div>
+                </div>
+                  
+                <div class="competences-category">
+                    <h4>Frameworks et bibliothèques</h4>
+                    <div class="competence-item">
+                      <img src="images/compétences/bootstrap-icon.png" alt="Bootstrap">
+                      <p>Bootstrap</p>
+                    </div>
+                    <div class="competence-item">
+                      <img src="images/compétences/react-icon.png" alt="React">
+                      <p>React</p>
+                    </div>
+                    <div class="competence-item">
+                      <img src="images/compétences/redwoodjs-icon.svg" alt="RedwoodJS">
+                      <p>RedwoodJS</p>
+                    </div>
+                    <div class="competence-item">
+                      <img src="images/compétences/symfony-icon.jpg" alt="Symfony">
+                      <p>Symfony</p>
+                    </div>
+                </div>
+                  
+                <div class="competences-category">
+                    <h4>Bases de données</h4>
+                    <div class="competence-item">
+                        <img src="images/compétences/mysql-icon.svg" alt="MySQL">
+                        <p>Mysql</p>
+                      </div>
+                    <div class="competence-item">
+                      <img src="images/compétences/mariadb-icon.png" alt="MariaDB">
+                      <p>MariaDB</p>
+                    </div>
+                    <div class="competence-item">
+                      <img src="images/compétences/mongodb-icon.jpg" alt="MongoDB">
+                      <p>MongoDB</p>
+                    </div>
+                </div>
+                
+                <div class="competences-category">
+                    <h4>Outils et technologies</h4>
+                    <div class="competence-item">
+                      <img src="images/compétences/nodejs-icon.jpg" alt="Node.js">
+                      <p>Node.js</p>
+                    </div>
+                    <div class="competence-item">
+                        <img src="images/compétences/git-icon.jpg" alt="Git">
+                        <p>Git</p>
+                      </div>
+                    <div class="competence-item">
+                      <img src="images/compétences/docker-icon.jpg" alt="Docker">
+                      <p>Docker</p>
+                    </div>
+                    <div class="competence-item">
+                        <img src="images/compétences/graphql-icon.jpg" alt="GraphQL">
+                        <p>GraphQL</p>
+                    </div>
+                    <div class="competence-item">
+                      <img src="images/compétences/aws-icon.png" alt="AWS">
+                      <p>AWS</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Parcours -->
+            <div class="parcours">
+                <h3>Parcours</h3>
+                <ul class="timeline-horizontal">
+                    <li>
+                        <input type="radio" id="event1" name="timeline-event" class="timeline-radio" />
+                        <div class="timeline-point"></div>
+                        <label for="event1">Sept 2022 - Juin 2023</label>
+                        <div class="timeline-content">
+                            <h4>Baccalauréat STMG</h4>
+                            <h5>( Sciences et Technologies du Management et de la Gestion )</h5>
+                            <p><strong>Spécialité :</strong> Marketing</p> <!-- Changement pour aligner à gauche et rendre le texte fort -->
+                            <p><strong>Année :</strong> 2022-2023</p>
+                            <p><strong>Établissement :</strong> <a href="https://institutionsaintaspais.fr/">Lycée Saint Aspais</a></p>
+                            <p><strong>Compétences acquises :</strong> Gestion de projet, comptabilité, analyse de données, travail d'équipe</p>
+                        </div>                        
+                    </li>
+                    <li>
+                        <input type="radio" id="event2" name="timeline-event" class="timeline-radio" />
+                        <div class="timeline-point"></div>
+                        <label for="event2">Sept 2023 - Juin 2025</label>
+                        <div class="timeline-content">
+                            <h4>BTS SIO</h4>
+                            <h5>( Services Informatiques aux Organisations )</h5>
+                            <p><strong>Spécialité :</strong> SLAM (Solutions Logicielles et Applications Métiers)</p> <!-- Changement pour aligner à gauche et rendre le texte fort -->
+                            <p><strong>Année :</strong> 2023-2025</p>
+                            <p><strong>Établissement :</strong> <a href="https://institutionsaintaspais.fr/">Campus Saint Aspais</a></p>
+                            <pre><strong>Compétences acquises :</strong> Développement web, gestion de bases de données, 
+                                                                analyse des besoins, gestion de projets informatiques</pre>
+                            <a href="https://pedagogie.ac-reunion.fr/fileadmin/ANNEXES-ACADEMIQUES/03-PEDAGOGIE/02-COLLEGE/langues-vivantes/anglais/images_Nawaz/BTS_SIO/REFERENTIEL_BTS_SIO-_RENOVATION_SESSION_2022-SIGNETS.pdf" target="_blank">> référentiel bts sio</a>
+                        </div>
+                    </li>
+                </ul>
+            </div> 
+
+            <!-- Intérêts -->
+            <div class="interets">
+                <h2 class="section-title">Mes centres d'intérêt</h2>
+                
+                <div class="grid">
+                    <!-- Musique -->
+                    <div class="card category">
+                        <div class="card-header">
+                            <!-- <img src="/images/music.jpg" alt="Musique" /> -->
+                            <h3>🎧 Musique</h3>
+                        </div>
+                        <div class="sub-cards">
+                            <div class="sub-card">
+                                <!-- <img src="/images/instrumental.jpg" alt="instrumental" /> -->
+                                <div class="mini-placeholder"></div>
+                                <span>instrumental</span>
+                            </div>
+                            <div class="sub-card">
+                                <!-- <img src="/images/traditionnel.jpg" alt="traditionnel" /> -->
+                                <div class="mini-placeholder"></div>
+                                <span>traditionnel</span>
+                            </div>
+                            <div class="sub-card">
+                                <!-- <img src="/images/Jpop.jpg" alt="Jpop" /> -->
+                                <div class="mini-placeholder"></div>
+                                <span>Jpop</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Jeux vidéo -->
+                    <div class="card category">
+                        <div class="card-header">
+                            <!-- <img src="/images/gaming.jpg" alt="Jeux vidéo" /> -->
+                            <h3>🎮 Jeux vidéo</h3>
+                        </div>
+                        <div class="sub-cards">
+                            <div class="sub-card">
+                                <!-- <img src="/images/Wuthering waves.jpg" alt="Wuthering waves" /> -->
+                                <div class="mini-placeholder"></div>
+                                <span>Wuthering waves</span>
+                            </div>
+                            <div class="sub-card">
+                                <!-- <img src="/images/Ender Lilies.jpg" alt="Ender Lilies" /> -->
+                                <div class="mini-placeholder"></div>
+                                <span>Ender Lilies</span>
+                            </div>
+                            <div class="sub-card">
+                                <!-- <img src="/images/Minecraft.jpg" alt="Minecraft" /> -->
+                                <div class="mini-placeholder"></div>
+                                <span>Minecraft</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Informatique -->
+                    <div class="card category">
+                        <div class="card-header">
+                            <!-- <img src="/images/tech.jpg" alt="Informatique" /> -->
+                            <h3>💻 Informatique</h3>
+                        </div>
+                        <div class="sub-cards">
+                            <div class="sub-card">
+                                <!-- <img src="/images/AI.jpg" alt="AI" /> -->
+                                <div class="mini-placeholder"></div>
+                                <span>AI</span>
+                            </div>
+                            <div class="sub-card">
+                                <!-- <img src="/images/Game Dev.jpg" alt="Game Dev" /> -->
+                                <div class="mini-placeholder"></div>
+                                <span>Game Dev</span>
+                            </div>
+                            <div class="sub-card">
+                                <!-- <img src="/images/graphql.jpg" alt="GraphQL" /> -->
+                                <div class="mini-placeholder"></div>
+                                <span>GraphQL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>  
+
+        <!-- Experiences -->
+        <section id="experiences">
+            <h2>Expériences professionnelles</h2>
+            <div class="timeline">
+
+                <!-- Exemple pour une expérience à gauche -->
+                <div class="container left">
+                    <div class="content">
+                        <div class="experience-header">
+                            <a href="https://institutionsaintaspais.fr/"><img src="images/logo/SaintAspais-logo.jpg" alt="Saint Aspais" class="experience-logo"></a>
+                            <div>
+                                <h3>Stage</h3>
+                                <a href="https://institutionsaintaspais.fr/"><p class="company-name">institution Saint Aspais</p></a>
+                            </div>
+                        </div>
+                        <h4>Mai 2024 - Juin 2024</h4>
+                        <p>
+                            Création d'un annuaire en ligne, l'installation du matériel pour examens. Vérification et remplacement de matériels informatiques défectueux ou endommagés.                        </p>
+                        <a id="exp-a" class="btn" href="fichiers/rapport/Rapport stage 1ere année Timothée Imaho.pdf" target="_blank">Rapport de stage</a>
+                    </div>
+                </div>
+
+                <!-- Exemple pour une expérience à droite -->
+                <div class="container right">
+                    <div class="content">
+                        <div class="experience-header">
+                            <a href="https://heavenflow.org/"><img src="images/logo/heavenflow-logo.png" alt="Heaven Flow" class="experience-logo"></a>
+                            <div>
+                                <h3>Stage</h3>
+                                <a href="https://heavenflow.org/"><p class="company-name">Heaven Flow Group</p></a>
+                            </div>
+                        </div>
+                        <h4>Janvier 2025 - Fervrier 2025</h4>
+                        <p>
+                            Étude et installations de solutions pour le management de l'organisation. Développement d'une plateforme de réservation de salles avec RedwoodJS et MongoDB.
+                        </p>
+                        <!-- Rapport facultatif -->
+                        <a id="exp-a" class="btn" href="fichiers/rapport/Rapport stage 2eme année Timothée Imaho .pdf" target="_blank">Rapport de stage</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Projets -->
+        <section id="projets">
+            <h2>Projets</h2>
+            <div class="projets-container">
+                <div class="carte">
+                    <img class="placeholder-image" src="images/projets/projet-koo2.png" alt="koo2">
+                    <!-- <div class="placeholder-image"></div> -->
+                    <h3>Koo2Fourchette</h3>
+                    <p>Projet scholaire. Création d'un site de partage de recettes en ligne.</p>
+                    <a href="https://winsftp.alwaysdata.net/projets/KOO2/" class="btn">Voir le projet</a>
+                </div>
+                <div class="carte">
+                    <!-- <img src="chemin/vers/image2.jpg" alt="Projet 2"> -->
+                    <div class="placeholder-image"></div>
+                    <h3>Covoit'Aspais</h3>
+                    <p>Projet scholaire. Application web de covoiturage.</p>
+                    <a href="https://covoit.rouesoify.fr/index.php" class="btn">Voir le projet</a>
+                </div>
+                <div class="carte">
+                    <!-- <img src="chemin/vers/image3.jpg" alt="Projet 3"> -->
+                    <div class="placeholder-image"></div>
+                    <h3>Jeu de bataille</h3>
+                    <p>Projet scholaire. Jeu de carte classique de bataille.</p>
+                    <a href="#" class="btn">Voir le projet</a>
+                </div>
+                <div class="carte">
+                    <!-- <img src="chemin/vers/image3.jpg" alt="Projet 3"> -->
+                    <div class="placeholder-image"></div>
+                    <h3>Gestion Casier</h3>
+                    <p>Projet scholaire. Gestion des casiers pour établissement scolaire</p>
+                    <a href="#" class="btn">Voir le projet</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="veille">
+            <h2>Veille Technologique - Moteurs de Jeu</h2>
+        
+            <!-- Définition de la veille -->
+            <div>
+                <h3>Définition de la veille</h3>
+                <p>La veille technologique est un processus de collecte et d'analyse d'informations sur les nouvelles technologies, tendances et évolutions dans un domaine spécifique.<br>Elle permet de rester informés en temps réel des avancées.</p>
+            </div>
+            
+            <!-- Sujet de la veille -->
+            <div>
+                <h3>Présentation du sujet : Moteurs de Jeu</h3>
+                <p>
+                    Un <strong>game engine</strong> (ou <strong>moteur de jeu</strong>) est un <strong>logiciel</strong> ou un ensemble d'outils conçus pour faciliter le développement de jeux vidéo en fournissant une architecture et des fonctionnalités prêtes à l'emploi.<br>Il permet aux développeurs de se concentrer sur la création de contenu (gameplay, graphismes, interactions) sans avoir à coder chaque élément technique de base.
+                </p>
+            </div>
+
+            <h3>Pourquoi utiliser un game engine ?</h3>
+            <ul>
+                <li><strong>Gain de temps :</strong> Utiliser un moteur permet d'éviter de coder tous les composants de base (rendu graphique, physique, etc.).</li>
+                <li><strong>Performance :</strong> Les moteurs de jeu sont optimisés pour les performances (multithreading, rendu GPU).</li>
+                <li><strong>Communauté :</strong> Les moteurs les plus populaires bénéficient de grandes communautés, de tutoriels et de plugins.</li>
+                <li><strong>Flexibilité :</strong> Possibilité d'adapter le moteur à différents types de jeux (FPS, RPG, stratégie, etc.).</li>
+            </ul>
+            <div class="game-engines">
+                <div class="av-veille">
+                    <h2>Godot 4.4</h2>
+                    <div class="text-image">
+                        <img src="images/veille/godot4.4.jpeg" alt="Godot 4.4" />
+                        <div class="text">
+                            <p>Le <strong>3 mars 2025</strong>, Godot Engine a publié la version 4.4, avec :</p>
+                            <ul>
+                                <li>Support du backend de rendu Metal</li>
+                                <li>Édition interactive en jeu</li>
+                                <li>Pré-compilation du pipeline et intégration du moteur physique Jolt</li>
+                            </ul>
+                            <p><a href="https://godotengine.org/releases/4.4/" target="_blank">En savoir plus sur Godot 4.4</a></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="av-veille">
+                    <h2>Unreal Engine 5.5</h2>
+                    <div class="text-image">
+                        <img src="images/veille/unreal-engine5.5.jpg" alt="Unreal Engine 5.5" />
+                        <div class="text">
+                            <p>Le <strong>12 novembre 2024</strong>, Epic Games a lancé la version 5.5 d'Unreal Engine, introduisant :</p>
+                            <ul>
+                                <li>Amélioration du système Lumen avec un éclairage plus réaliste</li>
+                                <li>Optimisation du Nanite pour une meilleure gestion des ressources</li>
+                                <li>Nouveaux outils pour le développement de jeux VR/AR</li>
+                            </ul>
+                            <p><a href="https://www.unrealengine.com/fr/blog/unreal-engine-5-5-is-now-available?tags=news" target="_blank">En savoir plus sur Unreal Engine 5.5</a></p>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="av-veille">
+                    <h2>Unity 6</h2>
+                    <div class="text-image">
+                        <img src="images/veille/unity6.jpg" alt="Unity 6" />
+                        <div class="text">
+                            <p>Le <strong>17 octobre 2024</strong>, Unity Technologies a lancé Unity 6, mettant l'accent sur la stabilité et les performances. Cette version offre :</p>
+                            <ul>
+                                <li>Rendu graphique personnalisable</li>
+                                <li>Développement de jeux multijoueurs simplifié</li>
+                                <li>Optimisation pour les navigateurs web mobiles</li>
+                            </ul>
+                            <p>Version 6.1 prévue pour avril 2025</p>
+                            <p><a href="https://unity.com/blog/unity-6-features-announcement" target="_blank">En savoir plus sur Unity 6</a></p>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="av-veille">
+                    <h2>Godot 4.3</h2>
+                    <div class="text-image">
+                        <img src="images/veille/godot4.3.webp" alt="Godot 4.3" />
+                        <div class="text">
+                            <p>Le <strong>15 août 2024</strong>, Godot Engine a publié la version 4.3, introduisant :</p>
+                            <ul>
+                                <li>Synchronisation GPU avec des graphes acycliques</li>
+                                <li>Effets de compositeur dans le pipeline de rendu</li>
+                                <li>Amélioration du retargeting des animations 3D</li>
+                            </ul>
+                            <p><a href="https://godotengine.org/releases/4.3/" target="_blank">En savoir plus sur Godot 4.3</a></p>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="av-veille">
+                    <h2>Unreal Engine 5.4</h2>
+                    <div class="text-image">
+                        <img src="images/veille/unreal-engine5.4.webp" alt="Unreal Engine 5.4" />
+                        <div class="text">
+                            <p>Le <strong>23 avril 2024</strong>, Epic Games a publié la version 5.4 d'Unreal Engine, introduisant :</p>
+                            <ul>
+                                <li>Améliorations du rendu volumétrique</li>
+                                <li>Nouvelles options de gestion d'animation</li>
+                                <li>Performances accrues sur les consoles de nouvelle génération</li>
+                            </ul>
+                            <p><a href="https://www.unrealengine.com/en-US/blog/unreal-engine-5-4-is-now-available" target="_blank">En savoir plus sur Unreal Engine 5.4</a></p>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="av-veille">    
+                    <h2>Godot Engine 4.2</h2>
+                    <div class="text-image">
+                        <img src="images/veille/godot4.2.webp" alt="Godot Engine 4.2" />
+                        <div class="text">
+                            <p>En <strong>30 novembre 2023</strong>, la version 4.2 de Godot Engine a introduit :</p>
+                            <ul>
+                                <li>Nœud AnimationMixer</li>
+                                <li>Amélioration de l'éditeur de tuiles</li>
+                                <li>Support des régions de code dans l'éditeur GDScript</li>
+                            </ul>
+                            <p><a href="https://godotengine.org/article/godot-4-2-arrives-in-style/" target="_blank">En savoir plus sur Godot Engine 4.2</a></p>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="av-veille">
+                    <h2>Unreal Engine 5.3</h2>
+                    <div class="text-image">
+                        <img src="images/veille/unreal-engine5.3.jpeg" alt="Unreal Engine 5.3" />
+                        <div class="text">
+                            <p>Le <strong>6 septembre 2023</strong>, Epic Games a publié la version 5.3 d'Unreal Engine, introduisant :</p>
+                            <ul>
+                                <li>Gestion améliorée des tissus, du feu et de l'éclairage</li>
+                                <li>Rendu volumétrique de qualité cinématographique</li>
+                                <li>Outils de production virtuelle améliorés</li>
+                            </ul>
+                            <p><a href="https://www.unrealengine.com/en-US/blog/unreal-engine-5-3-is-now-available" target="_blank">En savoir plus sur Unreal Engine 5.3</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ✅ TENDANCES -->
+                <h2>Tendances générales des moteurs de jeu</h2>
+                <div class="av-veille">
+                    <h3>Ray tracing en temps réel</h3>
+                    <div class="text-image">
+                        <img src="images/veille/ray-tracing.png" alt="Ray tracing" />
+                        <div class="text">
+                            <p id="def">Le ray tracing est une technique de rendu graphique utilisée pour simuler de manière réaliste l'éclairage et les ombres dans un environnement 3D. Elle imite la façon dont la lumière se déplace dans le monde réel en traçant des rayons de lumière à partir de la caméra. Ce procédé permet de créer des effets comme des reflets, des ombres et des réfractions très réalistes, mais il est plus exigeant en termes de ressources matérielles.</p>
+                            <p>Le ray tracing en temps réel est de plus en plus adopté :</p>
+                            <ul>
+                                <li><strong>Unreal Engine 5 :</strong> Système Lumen pour un éclairage global dynamique.</li>
+                                <li><strong>Unity 6 :</strong> Prise en charge via le High Definition Render Pipeline (HDRP).</li>
+                                <li><strong>Minecraft RTX :</strong> Utilise le ray tracing via le moteur NVIDIA RTX.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <h3>Intégration de la réalité virtuelle (VR) et augmentée (AR)</h3>
+                    <div class="text-image">
+                        <img src="images/veille/ar-vr.jpg" alt="VR et AR" />
+                        <div class="text">
+                            <p id="def">Réalité Virtuelle (VR) : La VR est une technologie immersive qui permet à l'utilisateur d'interagir avec un environnement 3D simulé via un casque. L'utilisateur est plongé dans un monde virtuel où il peut interagir comme s'il était physiquement présent.</p>
+                            <p id="def">Réalité Augmentée (AR) : L'AR superpose des éléments virtuels sur le monde réel. L'utilisateur voit son environnement réel enrichi par des objets numériques, souvent via un smartphone ou des lunettes spéciales, offrant une expérience interactive où le réel et le virtuel coexistent.</p>
+                            <p>Les moteurs de jeu s'adaptent aux nouvelles plateformes VR/AR :</p>
+                            <ul>
+                                <li><strong>Unreal Engine 5 :</strong> Support natif d'OpenXR (Oculus Quest 2, Valve Index).</li>
+                                <li><strong>Unity 6 :</strong> Prise en charge d'OpenXR pour une compatibilité VR/AR élargie.</li>
+                                <li><strong>Godot 4 :</strong> Support de la VR via OpenXR avec API simplifiée.</li>
+                                <li><strong>Horizon Worlds (Meta) :</strong> Utilise Unreal Engine pour la création de mondes virtuels.</li>
+                            </ul>
+                        </div>
+                    </div>
+            
+                    <h3>Démocratisation du développement de jeux</h3>
+                    <div class="text-image">
+                        <img src="images/veille/Thumbnail-processus-de-creation-jv-1200x630-cropped.jpg" alt="Visual Scripting" />
+                        <div class="text">
+                            <p id="def">La démocratisation du développement de jeux fait référence à la facilitation de la création de jeux vidéo, permettant à des personnes sans compétences techniques en programmation de participer à la création de jeux. Cela se réalise grâce à des outils comme les moteurs de jeux à interfaces visuelles (par exemple, Unity Visual Scripting, Godot) et des plateformes de développement accessibles (par exemple, Roblox Studio, GDevelop), qui simplifient les processus de création et de programmation.</p>
+                            <p>De plus en plus d'outils facilitent le développement :</p>
+                            <ul>
+                                <li><strong>Unity Visual Scripting :</strong> Création d'interactions sans coder.</li>
+                                <li><strong>Godot :</strong> Langage GDScript inspiré de Python.</li>
+                                <li><strong>GDevelop :</strong> Interface drag-and-drop pour créer des jeux sans coder.</li>
+                                <li><strong>Core :</strong> Basé sur Unreal Engine, avec une interface simplifiée.</li>
+                                <li><strong>PlayCanvas :</strong> Moteur de jeux HTML5 avec script JavaScript simple.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>            
+
+        <!-- Section Contact -->
+        <section id="contact">
+            <div class="contact-container">
+                <!-- Infos personnelles + Iframe -->
+                <div class="contact-info">
+                    <h3>Mes coordonnées</h3>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +33 7 67 73 37 00</li>
+                        <li><i class="fas fa-envelope"></i> timotheeimaho.pro@gmail.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Seine-et-Marne, France</li>
+                    </ul>
+                </div>
+                <!-- Formulaire de contact -->
+                <div class="contact-form">
+                    <h3>Contactez-moi</h3>
+                    <form action="contactForm.php" method="POST">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Votre nom" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Votre email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Votre message" rows="4" required></textarea>
+                        </div>
+                        <button class="btn" type="submit">Envoyer</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+
+        <footer>
+            <div class="footer-container">
+                <div class="footer-links">
+                    <a onclick="scrollToSection('accueil')">Accueil</a>
+                    <a onclick="scrollToSection('profil')">Profil</a>
+                    <a onclick="scrollToSection('experiences')">Expériences</a>
+                    <a onclick="scrollToSection('projets')">Projets</a>
+                    <a onclick="scrollToSection('contact')">Contact</a>
+                </div>
+                <div class="footer-socials">
+                    <a href="www.linkedin.com/in/timothée-imaho-6724732a5" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://www.github.com/Sweemyt" target="_blank" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+                <div class="footer-copy">
+                    &copy; 2025 Timothée - Tous droits réservés.
+                </div>
+            </div>
+        </footer>
+        
+    </body>
+</html>
