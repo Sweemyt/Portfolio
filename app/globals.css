@@ -1,26 +1,113 @@
 @import "tailwindcss";
 
+/*
+ * Thèmes clair / sombre
+ * - Par défaut : suit la préférence du système.
+ * - <html data-theme="light"> ou <html data-theme="dark"> force un thème (bouton de bascule).
+ * Chaque couleur est définie une seule fois avec light-dark(clair, sombre).
+ * Source des valeurs : directives_palette_couleurs.md (sections 4 et 5).
+ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light dark;
+}
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
 }
 
+:root {
+  /* Surfaces et texte */
+  --base-100: light-dark(#d9d4d0, #0b0a0d);
+  --base-200: light-dark(#c9c1bb, #212126);
+  --base-300: light-dark(#b8b0a8, #302d30);
+  --base-content: light-dark(#212126, #d9d4d0);
+
+  /* Accents */
+  --primary: light-dark(#732626, #8c4538);
+  --primary-content: #d9d4d0;
+  --secondary: #bfacaa;
+  --secondary-content: #212126;
+  --accent: light-dark(#8c4538, #a76a59);
+  --accent-content: light-dark(#d9d4d0, #0b0a0d);
+  --neutral: light-dark(#212126, #302d30);
+  --neutral-content: #d9d4d0;
+
+  /* Couleurs fonctionnelles */
+  --info: light-dark(#526c83, #7798b5);
+  --info-content: light-dark(#d9d4d0, #0b0a0d);
+  --success: light-dark(#526b52, #779276);
+  --success-content: light-dark(#d9d4d0, #0b0a0d);
+  --warning: light-dark(#96713a, #d1a15c);
+  --warning-content: #212126;
+  --error: light-dark(#8c4538, #bf6d61);
+  --error-content: light-dark(#d9d4d0, #0b0a0d);
+
+  /*
+   * AJOUT : couleur de texte pour liens et focus.
+   * En sombre, --primary (#8c4538) sur --base-100 est trop peu contrasté pour du texte,
+   * on utilise donc le rose taupe de la palette.
+   */
+  --link: light-dark(#732626, #bfacaa);
+}
+
+/* Expose les variables à Tailwind : bg-base-100, text-base-content, bg-primary, etc. */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Retire les couleurs par défaut de Tailwind pour rester dans la palette (optionnel). */
+  --color-*: initial;
+
+  --color-base-100: var(--base-100);
+  --color-base-200: var(--base-200);
+  --color-base-300: var(--base-300);
+  --color-base-content: var(--base-content);
+
+  --color-primary: var(--primary);
+  --color-primary-content: var(--primary-content);
+  --color-secondary: var(--secondary);
+  --color-secondary-content: var(--secondary-content);
+  --color-accent: var(--accent);
+  --color-accent-content: var(--accent-content);
+  --color-neutral: var(--neutral);
+  --color-neutral-content: var(--neutral-content);
+
+  --color-info: var(--info);
+  --color-info-content: var(--info-content);
+  --color-success: var(--success);
+  --color-success-content: var(--success-content);
+  --color-warning: var(--warning);
+  --color-warning-content: var(--warning-content);
+  --color-error: var(--error);
+  --color-error-content: var(--error-content);
+
+  --color-link: var(--link);
+
+  /* Urbanist est injectée via next/font (variable CSS --font-urbanist) */
+  --font-sans: var(--font-urbanist), sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    background-color: var(--base-100);
+    color: var(--base-content);
+    font-family: var(--font-urbanist), sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--link);
+    outline-offset: 2px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
