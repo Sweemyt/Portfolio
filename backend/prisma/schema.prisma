@@ -1,0 +1,262 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "mysql"
+}
+
+// ---------------------------------------------------------------------------
+// Convention : modèles en PascalCase (@@map vers la table), champs scalaires
+// inchangés (snake_case = noms des colonnes), relations en camelCase lisible.
+// ---------------------------------------------------------------------------
+
+// ----- Médias ---------------------------------------------------------------
+
+model Image {
+  id          Int     @id @default(autoincrement())
+  nom_fichier String  @db.VarChar(255)
+  chemin      String  @db.VarChar(500)
+  type_mime   String  @db.VarChar(100)
+  alt         String? @db.VarChar(255)
+
+  centresInteret CentreInteret[]
+  certifications Certification[]
+  competences    Competence[]
+  experiences    Experience[]
+  profils        Profil[]
+  projetImages   ProjetImage[]
+  projets        Projet[]
+  reseauxSociaux ReseauSocial[]
+
+  @@map("images")
+}
+
+model Document {
+  id          Int       @id @default(autoincrement())
+  nom         String    @db.VarChar(150)
+  nom_fichier String    @db.VarChar(255)
+  chemin      String    @db.VarChar(500)
+  type_mime   String    @db.VarChar(100)
+  taille      Int?
+  date_ajout  DateTime? @default(now()) @db.DateTime(0)
+  description String?   @db.Text
+
+  @@map("documents")
+}
+
+// ----- Contenu du portfolio -------------------------------------------------
+
+model Profil {
+  id             Int       @id @default(autoincrement())
+  nom            String    @db.VarChar(100)
+  prenom         String    @db.VarChar(100)
+  photo_id       Int?
+  titre          String?   @db.VarChar(150)
+  email          String?   @db.VarChar(255)
+  telephone      String?   @db.VarChar(30)
+  localisation   String?   @db.VarChar(255)
+  date_naissance DateTime? @db.Date
+  presentation   String?   @db.Text
+
+  photo Image? @relation(fields: [photo_id], references: [id], map: "fk_profil_photo")
+
+  @@index([photo_id], map: "fk_profil_photo")
+  @@map("profil")
+}
+
+model CategorieCompetence {
+  id  Int    @id @default(autoincrement())
+  nom String @unique(map: "nom") @db.VarChar(100)
+
+  competences Competence[]
+
+  @@map("categories_competences")
+}
+
+model Competence {
+  id           Int    @id @default(autoincrement())
+  nom          String @unique(map: "nom") @db.VarChar(100)
+  image_id     Int?
+  categorie_id Int
+
+  categorie         CategorieCompetence @relation(fields: [categorie_id], references: [id], map: "fk_competence_categorie")
+  image             Image?              @relation(fields: [image_id], references: [id], map: "fk_competence_image")
+  projetCompetences ProjetCompetence[]
+
+  @@index([categorie_id], map: "fk_competence_categorie")
+  @@index([image_id], map: "fk_competence_image")
+  @@map("competences")
+}
+
+model Projet {
+  id                  Int       @id @default(autoincrement())
+  nom                 String    @db.VarChar(150)
+  description         String?   @db.Text
+  image_principale_id Int?
+  lien_github         String?   @db.VarChar(500)
+  lien_projet         String?   @db.VarChar(500)
+  date                DateTime? @db.Date
+
+  imagePrincipale Image?             @relation(fields: [image_principale_id], references: [id], map: "fk_projet_image_principale")
+  competences     ProjetCompetence[]
+  images          ProjetImage[]
+
+  @@index([image_principale_id], map: "fk_projet_image_principale")
+  @@map("projets")
+}
+
+model ProjetCompetence {
+  projet_id     Int
+  competence_id Int
+
+  competence Competence @relation(fields: [competence_id], references: [id], onDelete: Cascade, map: "fk_projet_competence_competence")
+  projet     Projet     @relation(fields: [projet_id], references: [id], onDelete: Cascade, map: "fk_projet_competence_projet")
+
+  @@id([projet_id, competence_id])
+  @@index([competence_id], map: "fk_projet_competence_competence")
+  @@map("projet_competences")
+}
+
+model ProjetImage {
+  projet_id Int
+  image_id  Int
+
+  image  Image  @relation(fields: [image_id], references: [id], onDelete: Cascade, map: "fk_projet_image_image")
+  projet Projet @relation(fields: [projet_id], references: [id], onDelete: Cascade, map: "fk_projet_image_projet")
+
+  @@id([projet_id, image_id])
+  @@index([image_id], map: "fk_projet_image_image")
+  @@map("projet_images")
+}
+
+model Experience {
+  id          Int       @id @default(autoincrement())
+  poste       String    @db.VarChar(150)
+  entreprise  String    @db.VarChar(150)
+  date_debut  DateTime? @db.Date
+  date_fin    DateTime? @db.Date
+  en_cours    Boolean   @default(false)
+  description String?   @db.Text
+  logo_id     Int?
+  lieu        String?   @db.VarChar(255)
+
+  logo Image? @relation(fields: [logo_id], references: [id], map: "fk_experience_logo")
+
+  @@index([logo_id], map: "fk_experience_logo")
+  @@map("experiences")
+}
+
+model Formation {
+  id                 Int       @id @default(autoincrement())
+  nom                String    @db.VarChar(150)
+  specialite         String?   @db.VarChar(150)
+  etablissement      String    @db.VarChar(150)
+  lien_etablissement String?   @db.VarChar(500)
+  date_debut         DateTime? @db.Date
+  date_fin           DateTime? @db.Date
+  lieu               String?   @db.VarChar(255)
+  diplome            String?   @db.VarChar(150)
+
+  @@map("formations")
+}
+
+model Certification {
+  id       Int    @id @default(autoincrement())
+  nom      String @db.VarChar(150)
+  image_id Int?
+
+  image Image? @relation(fields: [image_id], references: [id], map: "fk_certification_image")
+
+  @@index([image_id], map: "fk_certification_image")
+  @@map("certifications")
+}
+
+model Langue {
+  id     Int    @id @default(autoincrement())
+  nom    String @db.VarChar(100)
+  niveau String @db.VarChar(100)
+
+  @@map("langues")
+}
+
+model CentreInteret {
+  id          Int     @id @default(autoincrement())
+  nom         String  @db.VarChar(150)
+  description String? @db.Text
+  image_id    Int?
+
+  image Image? @relation(fields: [image_id], references: [id], map: "fk_centre_interet_image")
+
+  @@index([image_id], map: "fk_centre_interet_image")
+  @@map("centres_interet")
+}
+
+model ReseauSocial {
+  id       Int    @id @default(autoincrement())
+  nom      String @db.VarChar(100)
+  url      String @db.VarChar(500)
+  icone_id Int?
+
+  icone Image? @relation(fields: [icone_id], references: [id], map: "fk_reseau_icone")
+
+  @@index([icone_id], map: "fk_reseau_icone")
+  @@map("reseaux_sociaux")
+}
+
+// ----- Authentification -----------------------------------------------------
+
+model Utilisateur {
+  id                  Int       @id @default(autoincrement())
+  nom                 String    @db.VarChar(100)
+  email               String    @unique(map: "email") @db.VarChar(255)
+  mot_de_passe        String    @db.VarChar(255)
+  role                String    @db.VarChar(50)
+  totp_secret_chiffre String?   @db.VarChar(255)
+  totp_active         Boolean   @default(false)
+  tentatives_echouees Int       @default(0)
+  verrouille_jusqu_a  DateTime? @db.DateTime(0)
+  derniere_connexion  DateTime? @db.DateTime(0)
+  date_creation       DateTime  @default(now()) @db.DateTime(0)
+
+  codesRecuperation CodeRecuperation[]
+  sessions          Session[]
+
+  @@map("utilisateurs")
+}
+
+model CodeRecuperation {
+  id               Int       @id @default(autoincrement())
+  utilisateur_id   Int
+  code_hash        String    @db.VarChar(255)
+  date_utilisation DateTime? @db.DateTime(0)
+
+  utilisateur Utilisateur @relation(fields: [utilisateur_id], references: [id], onDelete: Cascade, map: "fk_code_recuperation_utilisateur")
+
+  @@index([utilisateur_id], map: "fk_code_recuperation_utilisateur")
+  @@map("codes_recuperation")
+}
+
+model Session {
+  id                Int          @id @default(autoincrement())
+  utilisateur_id    Int
+  token_hash        String       @unique(map: "token_hash") @db.Char(64)
+  etape             EtapeSession @default(en_attente_2fa)
+  date_creation     DateTime     @default(now()) @db.DateTime(0)
+  derniere_activite DateTime     @default(now()) @db.DateTime(0)
+  date_expiration   DateTime     @db.DateTime(0)
+  adresse_ip        String?      @db.VarChar(45)
+  user_agent        String?      @db.VarChar(255)
+
+  utilisateur Utilisateur @relation(fields: [utilisateur_id], references: [id], onDelete: Cascade, map: "fk_session_utilisateur")
+
+  @@index([utilisateur_id], map: "fk_session_utilisateur")
+  @@index([date_expiration], map: "idx_session_expiration")
+  @@map("sessions")
+}
+
+enum EtapeSession {
+  en_attente_2fa
+  active
+}
